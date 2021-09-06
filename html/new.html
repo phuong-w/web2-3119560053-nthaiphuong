@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Vegetable</title>
+  <link rel="stylesheet" href="./css/bootstrap-4/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container mt-5 cart">
+    <h3 class="m-4">Add Vegetable</h3>
+    <form action="POST" enctype="multipart/form-data" id="add-vegetable-form">
+      <div class="row p-4">
+        <div class="col-8">
+          <div class="form-group">
+            <label for="vegname" class="form-label">Vegetable Name:</label>
+            <input type="text" id="vegname"  rules="required" name="vegname" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <label for="unit" class="form-label">Unit:</label>
+              <select name="unit" id="unit" value=""rules="required" class="form-control">
+
+                <option value="1">Kg</option>
+              </select>
+              <span class="form-message"></span>
+            </div>
+            <div class="form-group col">
+              <label for="amount" class="form-label">Amount:</label>
+              <input type="text" id="amount" rules="required" name="amount" class="form-control">
+              <span class="form-message"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" accept=".png, .jpg, .jpeg" id="file" rules="file" name="file" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          <button class="btn btn-info">Add</button>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="categoryName" class="form-label">Category Name:</label>
+            <select name="categoryName" id="categoryName" rules="required" class="form-control">
+              <option value="0">__Chọn một danh mục__</option>
+              <option value="1">Fruit</option>
+            </select>
+            <span class="form-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" id="price" rules="required" min="0" max="100"name="price" class="form-control">
+            <span class="form-message"></span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="./js/validator.js"></script>
+  <script type="text/javascript">
+    var formRegister = new Validator('#add-vegetable-form')
+    formRegister.onSubmit = function (formData){
+        console.log(formData)
+    }
+  </script>
+</body>
+</html>

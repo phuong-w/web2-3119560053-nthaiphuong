@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category</title>
+  <link rel="stylesheet" href="./css/bootstrap-4/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container mt-5 cart">
+      <div class="row p-4">
+        <div class="col-4">
+          <form action="POST" class="mt-3" id="add-category-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" id="name" name="name" rules="required" class="form-control">
+              <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="discription" class="form-label">Discription:</label>
+              <input type="text" id="discription" name="discription" rules="required" class="form-control">
+              <span class="form-message"></span>
+            </div>
+            <button class="btn btn-info">Add</button>
+          </form>
+        </div>
+        <div class="col-8">
+          <h3>Category</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Fruit</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ratione repellendus sapiente iusto iste et ea minima quasi quae, voluptatem odit optio, fugiat magnam tempore cupiditate quos. Nostrum, nulla fugit?</td>
+              </tr>
+              
+              <tr>
+                <th scope="row">2</th>
+                <td>Green Vegetable</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ratione repellendus sapiente iusto iste et ea minima quasi quae, voluptatem odit optio, fugiat magnam tempore cupiditate quos. Nostrum, nulla fugit?</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  <script src="./js/validator.js"></script>
+  <script type="text/javascript">
+    var formRegister = new Validator('#add-category-form')
+    formRegister.onSubmit = function (formData){
+        console.log(formData)
+    }
+  </script>
+</body>
+</html>
